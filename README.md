@@ -4,39 +4,99 @@
 [![Java](https://img.shields.io/badge/Java-%23ED8B00.svg?logo=openjdk&logoColor=%23000000)](#)
 [![Maven](https://img.shields.io/badge/Maven-black?logo=apachemaven&logoColor=%23C71A36)](#)
 
-Artisan Items is a datapack-like custom item factory for PaperMC servers targeting 1.21.10 and greater versions. The plugin is primarily developed in Kotlin, but has interfaces with Java for developers who would like to extend the plugin more.
+**Artisan Items** is a datapack-inspired, declarative custom item factory for PaperMC servers.
 
----
+Targeting **PaperMC 1.21.10+** \
+Requires **Java 21**
 
-## So what *is* this exactly?
+------------------------------------------------------------------------
 
-Specifically speaking, this plugin is an item factory. When the plugin is loaded, it will prompt the `Console` for a path to a directory containing special YAML files. The plugin will then parse and register each yaml file as a custom item and load it into the server for players to make use of.
+## What Is This?
 
-> [!NOTE]
-> As of March 3, 2026: this feature is planned to be barebones!
+artisan-items is a **data-driven item framework**.
 
-This is not an engine for RPG-like games, and this isn't a scripting engine. This is a framework for creating custom items. If you *need* very specific functionality, we recommend you fork the repo and build out those extended functions in Java (or Kotlin, dealers choice.).
+Instead of hardcoding items in a plugin, you define them in YAML.\
+On startup, the plugin scans a configurable directory, parses each YAML
+file, validates it, and compiles it into a custom in-game item.
+
+The goal is simple:
+
+> Declarative custom items, without turning your server into a scripting
+> engine.
+
+------------------------------------------------------------------------
+
+## What This Is Not
+
+Artisan Items is **not**:
+-   A scripting engine
+-   A full RPG framework
+-   A combat overhaul system
+-   A skill tree or progression system
+
+If you need highly specialized logic or complex gameplay systems, you
+are encouraged to fork the repository (MIT licensed) and extend it to
+fit your needs.
+
+This project intentionally focuses on being a clean, composable item
+factory.
+
+------------------------------------------------------------------------
+
+## Design Philosophy
+
+- Declarative over imperative
+- Data-driven over hardcoded 
+- Stable explicit IDs over filename-based identity 
+- Extensible, but not bloated 
+- Simple first, powerful later
+
+------------------------------------------------------------------------
 
 ## Example YAML
 
-> Coming soon...
+> Coming soon.
+
+(Planned example structure will include display metadata, durability,
+attributes, cooldowns, and configurable triggers.)
+
+------------------------------------------------------------------------
 
 ## Building / Installing
 
-If you're just using this plugin, you will need at minimum:
- - JRE 21
+### Running the plugin
 
-If you plan on building from source, you will need these extras:
- - JDK 21
- - Kotlin
- - Maven 3.9.10+
- - An IDE like IntelliJ or VSCode
+You will need:
 
-Once you've got the repo cloned with `git clone` or your choice of repo management, it's as easy as running `mvn package` to build the plugin.
+- **Java 21 (JRE)**
+- PaperMC 1.21.10+
 
-> [!NOTE]
-> If you choose to build from source, we assume that you already have an IDE like IntelliJ or VSCode setup for Java development. And that you also have a Kotlin compiler setup correctly.
+Drop the built `.jar` into your `/plugins` folder and restart the
+server.
+
+------------------------------------------------------------------------
+
+### Building from source
+
+Requirements:
+
+- **JDK 21**
+- **Maven 3.9.10+**
+
+Clone the repository:
+
+``` bash
+git clone https://github.com/sapphicnerddev/artisan-items.git
+cd artisan-items
+mvn package
+```
+
+The compiled plugin jar will be located in:
+
+    /target/
+
+------------------------------------------------------------------------
 
 ## License
 
-This project is licensed under [MIT](./LICENSE).
+This project is licensed under the [MIT License](./LICENSE).
