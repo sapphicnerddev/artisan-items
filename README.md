@@ -10,7 +10,10 @@ Artisan Items is a datapack-like custom item factory for PaperMC servers targeti
 
 ## So what *is* this exactly?
 
-Specifically speaking, this plugin is an item factory. When the plugin is loaded, it will prompt the `Console` for a path to a directory containing special YAML files. 
+Specifically speaking, this plugin is an item factory. When the plugin is loaded, it will prompt the `Console` for a path to a directory containing special YAML files. The plugin will then parse and register each yaml file as a custom item and load it into the server for players to make use of.
+
+> [!NOTE]
+> As of March 3, 2026: this feature is planned to be very barebones!
 
 ## Example YAML
 
